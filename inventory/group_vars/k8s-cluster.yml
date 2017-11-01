@@ -23,7 +23,7 @@ kube_users_dir: "{{ kube_config_dir }}/users"
 kube_api_anonymous_auth: false
 
 ## Change this to use another Kubernetes version, e.g. a current beta release
-kube_version: v1.8.2
+#kube_version: v1.8.2
 
 # Where the binaries will be downloaded.
 # Note: ensure that you've enough disk space (about 1G)
@@ -67,7 +67,7 @@ kube_users:
 
 # Choose network plugin (calico, weave or flannel)
 # Can also be set to 'cloud', which lets the cloud provider setup appropriate routing
-kube_network_plugin: calico
+kube_network_plugin: aci
 
 # weave's network password for encryption
 # if null then no network encryption

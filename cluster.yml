@@ -91,16 +91,16 @@
   roles:
     - { role: kubespray-defaults}
     - { role: kubernetes-apps/rotate_tokens, tags: rotate_tokens, when: "secret_changed|default(false)" }
-    - { role: kubernetes-apps/network_plugin, tags: network }
+    #- { role: kubernetes-apps/network_plugin, tags: network }
     - { role: kubernetes-apps/policy_controller, tags: policy-controller }
   environment: "{{proxy_env}}"
 
-- hosts: calico-rr
-  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
-  roles:
-    - { role: kubespray-defaults}
-    - { role: network_plugin/calico/rr, tags: network }
-  environment: "{{proxy_env}}"
+#- hosts: calico-rr
+#  any_errors_fatal: "{{ any_errors_fatal | default(true) }}"
+#  roles:
+#    - { role: kubespray-defaults}
+#    - { role: network_plugin/calico/rr, tags: network }
+#  environment: "{{proxy_env}}"
 
 - hosts: k8s-cluster
   any_errors_fatal: "{{ any_errors_fatal | default(true) }}"

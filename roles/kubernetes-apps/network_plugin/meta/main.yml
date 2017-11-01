@@ -19,3 +19,7 @@ dependencies:
     when: kube_network_plugin == 'weave'
     tags:
       - weave
+  - role: kubernetes-apps/network_plugin/aci
+    when: kube_network_plugin == 'aci'
+    tags:
+      - aci

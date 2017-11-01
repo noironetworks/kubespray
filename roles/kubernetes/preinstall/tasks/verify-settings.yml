@@ -17,7 +17,7 @@
 
 - name: Stop if unknown network plugin
   assert:
-    that: network_plugin in ['calico', 'canal', 'flannel', 'weave', 'cloud']
+    that: network_plugin in ['calico', 'canal', 'flannel', 'weave', 'cloud', 'aci']
   when: network_plugin is defined
   ignore_errors: "{{ ignore_assert_errors }}"
 
@@ -72,8 +72,8 @@
   when: access_ip is defined
   ignore_errors: "{{ ignore_assert_errors }}"
 
-- name: Stop if swap enabled
-  assert:
-    that: ansible_swaptotal_mb == 0
-  when: kubelet_fail_swap_on|default(true)
-  ignore_errors: "{{ ignore_assert_errors }}"
+#- name: Stop if swap enabled
+#  assert:
+#    that: ansible_swaptotal_mb == 0
+#  when: kubelet_fail_swap_on|default(true)
+#  ignore_errors: "{{ ignore_assert_errors }}"
