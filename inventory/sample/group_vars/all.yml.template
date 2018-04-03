@@ -96,4 +96,4 @@ bin_dir: /usr/local/bin
 ## Please specify true if you want to perform a kernel upgrade
 kernel_upgrade: false
 
-#k8s_version: {{ k8s_version }}
+k8s_version: {{ k8s_version }}

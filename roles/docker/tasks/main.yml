@@ -36,6 +36,7 @@
   action: "{{ docker_repo_key_info.pkg_key }}"
   args:
     id: "{{item}}"
+    #url: "{{docker_repo_key_info.url}}"
     keyserver: "{{docker_repo_key_info.keyserver}}"
     state: present
   register: keyserver_task_result
@@ -57,7 +58,8 @@
   action: "{{ dockerproject_repo_key_info.pkg_key }}"
   args:
     id: "{{item}}"
-    url: "{{dockerproject_repo_key_info.url}}"
+    #url: "{{dockerproject_repo_key_info.url}}"
+    keyserver: "{{docker_repo_key_info.keyserver}}"
     state: present
   register: keyserver_task_result
   until: keyserver_task_result|succeeded
